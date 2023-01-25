@@ -10,8 +10,9 @@
         </Frame>
         <Label Text="Mon premier TP en Xamarin" FontSize="32" HorizontalTextAlignment="Center" Padding="30,10,30,10"/>
         <Label Text="Entrez un numéro de téléphone au format 0X.XX.XX.XX.XX" HorizontalTextAlignment="Center" FontSize="18" Padding="30,0,30,0"/>
-        <Entry HorizontalTextAlignment="Start" Placeholder="01.01.01.01.01" VerticalTextAlignment="Start"/>
-        <Button Text="Appelez-moi!" BackgroundColor="#2196F3" TextColor="White" CornerRadius="10"></Button>
+        <Label Text="Appelles le 08 12 12 pour rencontrer les mecs les plus chauds de ta région" HorizontalTextAlignment="Center" TextColor="Red"/>
+        <Entry x:Name="entNuméro" Placeholder="01.01.01.01.01" VerticalTextAlignment="Start" TextChanged="entNuméro_TextChanged"/>
+        <Button Text="Appelez-moi !" x:Name="butAppeler" TextColor="White" CornerRadius="10" BackgroundColor="#2196F3" IsEnabled="False"/>
     </StackLayout>
 
 </ContentPage>
