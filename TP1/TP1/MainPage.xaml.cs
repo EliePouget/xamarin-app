@@ -42,6 +42,7 @@ namespace TP1
             try
             {
                 PhoneDialer.Open(entNuméro.Text);
+                App.NumérosAppelés.Add(entNuméro.Text);
             }
             catch (ArgumentNullException anEx)
             {
@@ -55,6 +56,11 @@ namespace TP1
             {
                 // Other error has occurred.
             }
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PageNumeros());
         }
     }
 }

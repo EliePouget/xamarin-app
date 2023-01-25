@@ -13,6 +13,7 @@
         <Label Text="Appelles le 08 12 12 pour rencontrer les mecs les plus chauds de ta région" HorizontalTextAlignment="Center" TextColor="Red"/>
         <Entry x:Name="entNuméro" Placeholder="01.01.01.01.01" VerticalTextAlignment="Start" TextChanged="entNuméro_TextChanged"/>
         <Button Clicked="butAppeler_ClickedAsync" Text="Appelez-moi !" x:Name="butAppeler" TextColor="White" CornerRadius="10" BackgroundColor="#2196F3" IsEnabled="False"/>
+        <Button Clicked="Button_Clicked" Text="Afficher l'historique des appels" x:Name="butPageNuméros"/>
         <Image Source="moto.jpg" WidthRequest="500" HeightRequest="500"/>
     </StackLayout>
 
