@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +9,7 @@ namespace TP1
     public partial class App : Application
     {
         public static List<string> NumérosAppelés { get; set; }
+        public const string NUEMROS_APPELES = "fdgdfgd";
         public App()
         {
             InitializeComponent();
@@ -17,10 +19,16 @@ namespace TP1
 
         protected override void OnStart()
         {
+            if (Properties.ContainsKey( NUEMROS_APPELES) )
+            {
+                var lst = (Properties[NUEMROS_APPELES] as string).Split(';');
+                NumérosAppelés.AddRange(lst);
+            }
         }
 
         protected override void OnSleep()
         {
+            Properties.ContainsKey(NUEMROS_APPELES) = NumérosAppelés.Join(";");
         }
 
         protected override void OnResume()
