@@ -12,7 +12,8 @@
         <Label Text="Entrez un numéro de téléphone au format 0X.XX.XX.XX.XX" HorizontalTextAlignment="Center" FontSize="18" Padding="30,0,30,0"/>
         <Label Text="Appelles le 08 12 12 pour rencontrer les mecs les plus chauds de ta région" HorizontalTextAlignment="Center" TextColor="Red"/>
         <Entry x:Name="entNuméro" Placeholder="01.01.01.01.01" VerticalTextAlignment="Start" TextChanged="entNuméro_TextChanged"/>
-        <Button Text="Appelez-moi !" x:Name="butAppeler" TextColor="White" CornerRadius="10" BackgroundColor="#2196F3" IsEnabled="False"/>
+        <Button Clicked="butAppeler_ClickedAsync" Text="Appelez-moi !" x:Name="butAppeler" TextColor="White" CornerRadius="10" BackgroundColor="#2196F3" IsEnabled="False"/>
+        <Image Source="moto.jpg" WidthRequest="500" HeightRequest="500"/>
     </StackLayout>
 
 </ContentPage>

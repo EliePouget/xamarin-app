@@ -21,5 +21,21 @@ namespace TP1
             Regex exp = new Regex(@"0[1-9](\.?[0-9]{2}){4}");
             butAppeler.IsEnabled = exp.IsMatch(entNuméro.Text);
         }
+
+        private async void butAppeler_ClickedAsync(object sender, EventArgs e)
+        {
+            var appeler = DependencyService.Get<IAppel>();
+            if (appeler != null && await this.DisplayAlert(
+            "Composer un numéro",
+            "Voulez-vous composer le numéro " + entNuméro.Text + " ?",
+            "Oui", "Non"))
+            {
+                appeler.Appeler(entNuméro.Text);
+            }
+            else
+            {
+                await DisplayAlert("Erreur", "Fonctionnalité non implémentée", "Ok");
+            }
+        }
     }
 }
