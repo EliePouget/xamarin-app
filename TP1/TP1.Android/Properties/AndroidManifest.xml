@@ -4,4 +4,10 @@
 	<application android:label="TP1.Android" android:theme="@style/MainTheme"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.DIAL" />
+			<data android:scheme="tel"/>
+		</intent>
+	</queries>
 </manifest>

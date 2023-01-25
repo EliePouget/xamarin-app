@@ -6,6 +6,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+
 
 namespace TP1
 {
@@ -24,7 +26,7 @@ namespace TP1
 
         private async void butAppeler_ClickedAsync(object sender, EventArgs e)
         {
-            var appeler = DependencyService.Get<IAppel>();
+            /* var appeler = DependencyService.Get<IAppel>();
             if (appeler != null && await this.DisplayAlert(
             "Composer un numéro",
             "Voulez-vous composer le numéro " + entNuméro.Text + " ?",
@@ -35,6 +37,23 @@ namespace TP1
             else
             {
                 await DisplayAlert("Erreur", "Fonctionnalité non implémentée", "Ok");
+            }*/
+
+            try
+            {
+                PhoneDialer.Open(entNuméro.Text);
+            }
+            catch (ArgumentNullException anEx)
+            {
+                // Number was null or white space
+            }
+            catch (FeatureNotSupportedException ex)
+            {
+                // Phone Dialer is not supported on this device.
+            }
+            catch (Exception ex)
+            {
+                // Other error has occurred.
             }
         }
     }
