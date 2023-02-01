@@ -6,7 +6,7 @@
     <StackLayout Padding="45">
         <StackLayout Orientation="Horizontal" Margin="5">
             <Label Text="Prix" VerticalTextAlignment="Center"/>
-            <Entry TextChanged="entPrix_TextChanged" x:Name="entPrix" Placeholder="Tapez le prix" HorizontalOptions="FillAndExpand"/>
+            <Entry TextChanged="entPrix_TextChanged" Text="" x:Name="entPrix" Placeholder="Tapez le prix" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Margin="5">
@@ -31,7 +31,7 @@
                 <Label x:Name="lblTauxTaxe" Text=" 20%" />
             </StackLayout>
 
-            <Slider x:Name="slTauxTaxe" Minimum="0" Maximum="100" Value="20" />
+            <Slider ValueChanged="slTauxTaxe_ValueChanged" x:Name="slTauxTaxe" Minimum="0" Maximum="100" Value="20" />
 
             <StackLayout Orientation="Horizontal" Margin="5" >
                 <Button x:Name="but15Pourcent" Text="15%" HorizontalOptions="FillAndExpand" />

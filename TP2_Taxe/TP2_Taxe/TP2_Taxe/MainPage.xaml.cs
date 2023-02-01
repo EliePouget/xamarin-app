@@ -18,7 +18,7 @@ namespace TP2_Taxe
         private void Calculer()
         {
             Regex exp = new Regex(@"^\d{1,9}(,\d{1,2})?$");
-            if (entPrix.Text == null || exp.IsMatch(entPrix.Text))
+            if (entPrix.Text != "" || exp.IsMatch(entPrix.Text))
             {
                 if (swTaxeIncluse.IsToggled)
                 {
@@ -41,6 +41,11 @@ namespace TP2_Taxe
         }
 
         private void entPrix_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Calculer();
+        }
+
+        private void slTauxTaxe_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             Calculer();
         }
