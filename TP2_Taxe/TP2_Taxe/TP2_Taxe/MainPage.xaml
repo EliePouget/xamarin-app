@@ -4,21 +4,19 @@
              x:Class="TP2_Taxe.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Label Text="Prix"/>
+        <Entry Placeholder="Tapez le prix" />
+        <Label Text="Comprenant (On – T.T.C) ou non (Off – H.T.) la taxe" />
+        <Switch IsToggled="false" />
+        <Label Text="Montant de la taxe :" />
+        <Label Text="---" />
+        <Label Text="Total" />
+        <Label Text="---" />
+        <Label Text="Taux de la taxe (%)" />
+        <Label Text=" 20%" />
+        <Slider Minimum="0" Maximum="100" Value="20" />
+        <Button Text="15%" />
+        <Button Text="20%" />
     </StackLayout>
 
 </ContentPage>
