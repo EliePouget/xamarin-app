@@ -3,20 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TP2_Taxe.MainPage">
 
-    <StackLayout>
-        <Label Text="Prix"/>
-        <Entry Placeholder="Tapez le prix" />
-        <Label Text="Comprenant (On – T.T.C) ou non (Off – H.T.) la taxe" />
-        <Switch IsToggled="false" />
-        <Label Text="Montant de la taxe :" />
-        <Label Text="---" />
-        <Label Text="Total" />
-        <Label Text="---" />
-        <Label Text="Taux de la taxe (%)" />
-        <Label Text=" 20%" />
-        <Slider Minimum="0" Maximum="100" Value="20" />
-        <Button Text="15%" />
-        <Button Text="20%" />
+    <StackLayout Padding="45">
+        <StackLayout Orientation="Horizontal" Margin="5">
+            <Label Text="Prix" VerticalTextAlignment="Center"/>
+            <Entry Placeholder="Tapez le prix" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="5">
+            <Label Text="Comprenant (On – T.T.C) ou non (Off – H.T.) la taxe" VerticalTextAlignment="Center" />
+            <Switch IsToggled="false" />
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" Margin="5">
+            <Label Text="Montant de la taxe :" />
+            <Label Text="---" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="5">
+            <Label Text="Total :" />
+            <Label Text="---" />
+        </StackLayout>
+        
+        <StackLayout VerticalOptions="EndAndExpand">
+
+            <StackLayout Orientation="Horizontal" Margin="5">
+                <Label Text="Taux de la taxe (%) :" />
+                <Label Text=" 20%" />
+            </StackLayout>
+            
+            <Slider Minimum="0" Maximum="100" Value="20" />
+
+            <StackLayout Orientation="Horizontal" Margin="5" >
+                <Button Text="15%" HorizontalOptions="FillAndExpand" />
+                <Button Text="20%" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
