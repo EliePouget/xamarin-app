@@ -18,17 +18,22 @@ namespace TP2_Taxe
         private void Calculer()
         {
             Regex exp = new Regex(@"^\d{1,9}(,\d{1,2})?$");
-            if (entPrix.Text != "" || exp.IsMatch(entPrix.Text))
+            if (entPrix.Text != "" && exp.IsMatch(entPrix.Text))
             {
                 if (swTaxeIncluse.IsToggled)
                 {
-                    lblTaxe.Text = Math.Round((int)slTauxTaxe.Value * int.Parse(entPrix.Text) / (1+ slTauxTaxe.Value),2).ToString();
-                    lblTotal.Text = entPrix.Text;
+                    double prixTTC = double.Parse(entPrix.Text);
+                    double tauxTaxe = slTauxTaxe.Value / 100;
+                    lblTaxe.Text = Math.Round((prixTTC * tauxTaxe/(1+tauxTaxe)),2).ToString();
+                    lblTotal.Text = prixTTC.ToString();
                 }
                 else
                 {
-                    lblTaxe.Text = ((int)slTauxTaxe.Value * int.Parse(entPrix.Text)).ToString();
-                    lblTotal.Text = ((int)slTauxTaxe.Value * int.Parse(entPrix.Text) + (int)slTauxTaxe.Value).ToString();
+                    double prixHT = double.Parse(entPrix.Text);
+                    double tauxTaxe = (double)slTauxTaxe.Value / 100;
+                    double taxe = prixHT * tauxTaxe;
+                    lblTaxe.Text = taxe.ToString();
+                    lblTotal.Text = (taxe + prixHT).ToString();
     
                 }
             }
@@ -46,6 +51,11 @@ namespace TP2_Taxe
         }
 
         private void slTauxTaxe_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            Calculer();
+        }
+
+        private void swTaxeIncluse_Toggled(object sender, ToggledEventArgs e)
         {
             Calculer();
         }

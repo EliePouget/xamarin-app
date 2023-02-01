@@ -11,7 +11,7 @@
 
         <StackLayout Orientation="Horizontal" Margin="5">
             <Label Text="Comprenant (On – T.T.C) ou non (Off – H.T.) la taxe" VerticalTextAlignment="Center" />
-            <Switch x:Name="swTaxeIncluse" IsToggled="false" />
+            <Switch Toggled="swTaxeIncluse_Toggled" x:Name="swTaxeIncluse" IsToggled="false" />
         </StackLayout>
         
         <StackLayout Orientation="Horizontal" Margin="5">
