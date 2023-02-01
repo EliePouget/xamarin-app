@@ -6,36 +6,36 @@
     <StackLayout Padding="45">
         <StackLayout Orientation="Horizontal" Margin="5">
             <Label Text="Prix" VerticalTextAlignment="Center"/>
-            <Entry Placeholder="Tapez le prix" HorizontalOptions="FillAndExpand"/>
+            <Entry TextChanged="entPrix_TextChanged" x:Name="entPrix" Placeholder="Tapez le prix" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Margin="5">
             <Label Text="Comprenant (On – T.T.C) ou non (Off – H.T.) la taxe" VerticalTextAlignment="Center" />
-            <Switch IsToggled="false" />
+            <Switch x:Name="swTaxeIncluse" IsToggled="false" />
         </StackLayout>
         
         <StackLayout Orientation="Horizontal" Margin="5">
             <Label Text="Montant de la taxe :" />
-            <Label Text="---" />
+            <Label x:Name="lblTaxe" Text="---" />
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" Margin="5">
             <Label Text="Total :" />
-            <Label Text="---" />
+            <Label x:Name="lblTotal" Text="---" />
         </StackLayout>
         
         <StackLayout VerticalOptions="EndAndExpand">
 
             <StackLayout Orientation="Horizontal" Margin="5">
                 <Label Text="Taux de la taxe (%) :" />
-                <Label Text=" 20%" />
+                <Label x:Name="lblTauxTaxe" Text=" 20%" />
             </StackLayout>
-            
-            <Slider Minimum="0" Maximum="100" Value="20" />
+
+            <Slider x:Name="slTauxTaxe" Minimum="0" Maximum="100" Value="20" />
 
             <StackLayout Orientation="Horizontal" Margin="5" >
-                <Button Text="15%" HorizontalOptions="FillAndExpand" />
-                <Button Text="20%" HorizontalOptions="FillAndExpand" />
+                <Button x:Name="but15Pourcent" Text="15%" HorizontalOptions="FillAndExpand" />
+                <Button x:Name="but20Pourcent" Text="20%" HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </StackLayout>
     </StackLayout>
