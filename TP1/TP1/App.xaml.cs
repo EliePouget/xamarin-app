@@ -28,7 +28,8 @@ namespace TP1
 
         protected override void OnSleep()
         {
-            Properties.ContainsKey(NUEMROS_APPELES) = NumérosAppelés.Join(";");
+            var lst = string.Join(";", NumérosAppelés);
+            Properties[NUEMROS_APPELES] = lst;        
         }
 
         protected override void OnResume()
