@@ -59,5 +59,15 @@ namespace TP2_Taxe
         {
             Calculer();
         }
+
+        private void but15Pourcent_Clicked(object sender, EventArgs e)
+        {
+            slTauxTaxe.Value = 15;
+        }
+
+        private void but20Pourcent_Clicked(object sender, EventArgs e)
+        {
+            slTauxTaxe.Value = 20;
+        }
     }
 }

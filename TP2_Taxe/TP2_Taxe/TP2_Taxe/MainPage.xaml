@@ -34,8 +34,8 @@
             <Slider ValueChanged="slTauxTaxe_ValueChanged" x:Name="slTauxTaxe" Minimum="0" Maximum="100" Value="20" />
 
             <StackLayout Orientation="Horizontal" Margin="5" >
-                <Button x:Name="but15Pourcent" Text="15%" HorizontalOptions="FillAndExpand" />
-                <Button x:Name="but20Pourcent" Text="20%" HorizontalOptions="FillAndExpand" />
+                <Button Clicked="but15Pourcent_Clicked" x:Name="but15Pourcent" Text="15%" HorizontalOptions="FillAndExpand" />
+                <Button Clicked="but20Pourcent_Clicked" x:Name="but20Pourcent" Text="20%" HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </StackLayout>
     </StackLayout>
