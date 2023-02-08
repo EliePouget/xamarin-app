@@ -1,24 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TP2_calculatrice.MainPage">
+             x:Class="TP2_calculatrice.MainPage"
+             Padding="20">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+          
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+       </Grid.ColumnDefinitions>
+        <Label BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="4">Label</Label>
+
+        <Label BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="4">Label</Label>
+
+        <Button Grid.Row="2" Grid.Column="0" Text="7"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="8"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="9"/>
+        <Button Grid.Row="2" Grid.Column="3" Text="/"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Text="4"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="5"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="6"/>
+        <Button Grid.Row="3" Grid.Column="3" Text="x"/>
+
+        <Button Grid.Row="4" Grid.Column="0" Text="1"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="2"/>
+        <Button Grid.Row="4" Grid.Column="2" Text="3"/>
+        <Button Grid.Row="4" Grid.Column="3" Text="-"/>
+
+        <Button Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="1" Text="0"/>
+        <Button Grid.Row="5" Grid.Column="0" Text="+"/>
+
+
+        <Button Grid.Row="6" Grid.Column="3" Text="C"/>
+        <Button Grid.Row="6" Grid.ColumnSpan="3" Grid.Column="0" Text="="/>
+
+    </Grid>
 
 </ContentPage>
