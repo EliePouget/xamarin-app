@@ -5,7 +5,11 @@
              >
     <ContentPage.Resources>
         <ResourceDictionary>
-            
+            <Style x:Key="StyleLabel" TargetType="Label">
+                <Setter Property="TextTransform" Value="Uppercase"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
             <Style x:Key="StyleTouche" TargetType="Button">
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -19,12 +23,11 @@
             <Style x:Key="StyleOperateur" TargetType="Button" BasedOn="{StaticResource StyleTouche}">
                 <Setter Property="BackgroundColor" Value="Orange" />
             </Style>
-            
         </ResourceDictionary>
     </ContentPage.Resources>
+    
     <Grid BackgroundColor="#D01A61" Padding="20">
         <Grid.RowDefinitions>
-          
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
@@ -39,31 +42,32 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
        </Grid.ColumnDefinitions>
-        <Label BackgroundColor="Black" Grid.Row="0" Grid.ColumnSpan="4">Label</Label>
 
-        <Label BackgroundColor="#CDCCCC" Grid.Row="1" Grid.ColumnSpan="4">Label</Label>
+        <Label x:Name="lblOperation" BackgroundColor="#1EFF00" Grid.Row="0" Grid.ColumnSpan="4" FontSize="Header">0</Label>
 
-        <Button Grid.Row="2" Grid.Column="0" Text="7" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="8" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="2" Grid.Column="2" Text="9" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="2" Grid.Column="3" Text="/" Style="{StaticResource StyleOperateur}"/>
+        <Label x:Name="lblResultat" BackgroundColor="#00FFDC" Grid.Row="1" Grid.ColumnSpan="4" FontSize="Large">---</Label>
 
-        <Button Grid.Row="3" Grid.Column="0" Text="4" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="3" Grid.Column="1" Text="5" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="3" Grid.Column="2" Text="6" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="3" Grid.Column="3" Text="x" Style="{StaticResource StyleOperateur}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="2" Grid.Column="0" Text="7" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="2" Grid.Column="1" Text="8" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="2" Grid.Column="2" Text="9" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButOperatorClicked" Grid.Row="2" Grid.Column="3" Text="/" Style="{StaticResource StyleOperateur}"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Text="1" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="4" Grid.Column="1" Text="2" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="4" Grid.Column="2" Text="3" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="4" Grid.Column="3" Text="-" Style="{StaticResource StyleOperateur}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="3" Grid.Column="0" Text="4" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="3" Grid.Column="1" Text="5" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="3" Grid.Column="2" Text="6" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButOperatorClicked" Grid.Row="3" Grid.Column="3" Text="*" Style="{StaticResource StyleOperateur}"/>
 
-        <Button Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="1" Text="0" Style="{StaticResource StyleChiffre}"/>
-        <Button Grid.Row="5" Grid.Column="0" Text="+" Style="{StaticResource StyleOperateur}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="4" Grid.Column="0" Text="1" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="4" Grid.Column="1" Text="2" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButChiffreClicked" Grid.Row="4" Grid.Column="2" Text="3" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButOperatorClicked" Grid.Row="4" Grid.Column="3" Text="-" Style="{StaticResource StyleOperateur}"/>
+
+        <Button Clicked="ButChiffreClicked" Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="1" Text="0" Style="{StaticResource StyleChiffre}"/>
+        <Button Clicked="ButOperatorClicked" Grid.Row="5" Grid.Column="0" Text="+" Style="{StaticResource StyleOperateur}"/>
 
 
-        <Button Grid.Row="6" Grid.Column="3" Text="C"/>
-        <Button Grid.Row="6" Grid.ColumnSpan="3" Grid.Column="0" Text="=" Style="{StaticResource StyleOperateur}"/>
+        <Button Clicked="ButC_clicked" Grid.Row="6" Grid.Column="3" Text="C" BackgroundColor="HotPink" Style="{StaticResource StyleTouche}"/>
+        <Button Clicked="ButEqualClicked" Grid.Row="6" Grid.ColumnSpan="3" Grid.Column="0" Text="=" Style="{StaticResource StyleOperateur}"/>
 
     </Grid>
 
