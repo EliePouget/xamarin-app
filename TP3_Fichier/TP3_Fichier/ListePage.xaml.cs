@@ -15,6 +15,7 @@ namespace TP3_Fichier
         public ListePage()
         {
             InitializeComponent();
+            lstCitations.ItemsSource = (App.Current as App).GérerCitation.Citations;
         }
     }
 }

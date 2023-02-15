@@ -6,7 +6,7 @@ namespace TP3_Fichier.Data
 {
     public class GestionCitations
     {
-        private IList<Citation> Citations { get
+        public IList<Citation> Citations { get
             {
                 if (this.citations == null)
                 {
@@ -25,6 +25,21 @@ namespace TP3_Fichier.Data
         #region Données internes
         private static readonly List<Citation> __data = new List<Citation>
         {
+         new Citation
+         {
+         Texte = "Vaut mieux dehors que dedans !",
+         Auteur = "Shrek"
+         },
+         new Citation
+         {
+         Texte = "T'es comme le H de Hawaï, tu sers à rien 😂",
+         Auteur = "Brice de Nice"
+         },
+         new Citation
+         {
+         Texte = "Un beau nom comme ca, tu le dis deux fois.",
+         Auteur = "Moto moto"
+         },
          new Citation
          {
          Texte = "Si j'avais à écrire ici un livre de morale, il aurait cent pages et quatre-vingt-dix-neuf seraient blanches.",

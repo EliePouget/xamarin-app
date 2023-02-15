@@ -8,6 +8,9 @@
                 <Setter Property="TextColor" Value="#F2F2F2"/>
                 <Setter Property="HorizontalTextAlignment" Value="End"/>
             </Style>
+            <Style x:Key="myTextColor" TargetType="TextCell">
+                <Setter Property="TextColor" Value="#F2F2F2"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -5,7 +5,13 @@
     <ContentPage.Content>
         <StackLayout Padding="20">
             <ListView x:Name="lstCitations">
-                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Texte}"
+                                 TextColor="{StaticResource myTextColor}"
+                                 Detail="{Binding Auteur}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
             <Button x:Name="butAjouterCitation"/>
         </StackLayout>

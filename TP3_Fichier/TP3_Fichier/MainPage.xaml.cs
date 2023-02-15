@@ -14,5 +14,19 @@ namespace TP3_Fichier
         {
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            lblNombreCitations.Text = (App.Current as App).GérerCitation.Citations.Count().ToString();
+            butAfficherCitations.IsEnabled = true;
+            butAfficherCitations.Text = "Afficher les citations";
+            base.OnAppearing();    
+        }
+
+        private void butAfficherCitations_Clicked(object sender, EventArgs e)
+        {
+      
+            this.Navigation.PushAsync(new ListePage());
+
+        }
     }
 }
