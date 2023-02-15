@@ -4,15 +4,7 @@
              x:Class="TP3_Fichier.MainPage"
              Title="Accueil"
              Background="linear-gradient(90deg, rgba(7,4,69,1) 17%, rgba(55,118,168,0.6761006289308176) 100%, rgba(3,209,251,0.6713836477987422) 100%);">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="StyleLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="#F2F2F2"/>
-                <Setter Property="HorizontalTextAlignment" Value="End"/>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
+
     <StackLayout Padding="20">
         
         <Label Text="Citations" Style="{StaticResource StyleLabel}" FontSize="50" HorizontalTextAlignment="Center"/>
