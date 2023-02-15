@@ -18,10 +18,8 @@ namespace TP2_calculatrice
             OPERATEUR
         }
         private Touche DerniereTouche;
-        private string Resultat;
         public MainPage()
         {
-            Resultat = "";
             DerniereTouche = Touche.AUCUNE;
             InitializeComponent();
         }
@@ -56,7 +54,7 @@ namespace TP2_calculatrice
             }
             else if (DerniereTouche == Touche.OPERATEUR)
             {
-                lblOperation.Text = btn.Text;
+                lblOperation.Text += btn.Text;
                 DerniereTouche = Touche.CHIFFRE;
                 Calculer();
             } 
@@ -72,38 +70,26 @@ namespace TP2_calculatrice
             if(DerniereTouche == Touche.CHIFFRE)
             {
                 Button btn = (Button)sender;
-                lblOperation.Text = btn.Text;
+                lblOperation.Text += btn.Text;
                 DerniereTouche = Touche.OPERATEUR;
-                Resultat = "";
             } 
         }
         private void ButEqualClicked(object sender, EventArgs e)
         {
-            if (lblResultat.Text != "")
+            if (lblResultat.Text != "---")
             {
+                Calculer();
                 lblOperation.Text = lblResultat.Text;
-                lblResultat.Text = "";
+                lblResultat.Text = "---";
                 DerniereTouche = Touche.AUCUNE;
             }
             
         }
         private void Calculer()
         {
-            if (Resultat == "")
-            {
                 DataTable res = new DataTable();
                 object total = res.Compute(lblOperation.Text, null);
                 lblResultat.Text = total.ToString();
-                Resultat += total.ToString();
-            }
-            else
-            {
-                DataTable res = new DataTable();
-                object total = res.Compute(Resultat, null);
-                lblResultat.Text = total.ToString();
-                Resultat += total.ToString();
-            }
-            
         }
     }
 }
