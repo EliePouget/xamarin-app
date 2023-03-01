@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TP3_Fichier.Data;
+
 namespace TP3_Fichier
 {
     public partial class App : Application
@@ -21,6 +22,7 @@ namespace TP3_Fichier
 
         protected override void OnSleep()
         {
+            GérerCitation.Save();
         }
 
         protected override void OnResume()

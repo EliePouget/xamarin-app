@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace TP3_Fichier.Data
 {
     public class GestionCitations
     {
+        const string NOM_DE_SAUVEGARDE = "citations.json";
         public IList<Citation> Citations { get
             {
                 if (this.citations == null)
@@ -19,9 +23,35 @@ namespace TP3_Fichier.Data
 
         private void Load()
         {
-            citations = new List<Citation>(__data);
+            bool exist = false;
+            string path = Path.Combine(FileSystem.AppDataDirectory, NOM_DE_SAUVEGARDE);
+            if (File.Exists(path))
+            {
+                string content = File.ReadAllText(path, Encoding.UTF8);
+                if (content != null && content != "")
+                {
+                    citations = JsonConvert.DeserializeObject<List < Citation >> (content);
+                }
+                if (citations != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Citation récupérées depuis le fichier");
+                    exist = true;
+                }
+             }
+            if (!exist)
+            {
+                citations = new List<Citation>(__data);
+                System.Diagnostics.Debug.WriteLine("Echec de la récupération des citations");
+            }
+
         }
 
+        public void Save()
+        {
+            string path = Path.Combine(FileSystem.AppDataDirectory, NOM_DE_SAUVEGARDE);
+            string jsonData = JsonConvert.SerializeObject(citations);
+            File.WriteAllText(path, jsonData);
+        }
         #region Données internes
         private static readonly List<Citation> __data = new List<Citation>
         {
