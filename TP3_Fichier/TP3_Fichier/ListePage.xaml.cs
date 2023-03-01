@@ -17,5 +17,10 @@ namespace TP3_Fichier
             InitializeComponent();
             lstCitations.ItemsSource = (App.Current as App).GérerCitation.Citations;
         }
+
+        private void lstCitations_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.Item.ToString());
+        }
     }
 }
