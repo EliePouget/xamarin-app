@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace TP3_Fichier
 {
@@ -19,6 +20,7 @@ namespace TP3_Fichier
             base.OnAppearing();
             this.IsBusy = true;
 
+
             int nbCitations = await Task<int>.Run(() =>
             {
                 return
@@ -26,6 +28,7 @@ namespace TP3_Fichier
             });
             lblNombreCitations.Text = nbCitations.ToString();
             butAfficherCitations.IsEnabled = true;
+            lblRépertoire.Text = FileSystem.AppDataDirectory;
             butAfficherCitations.Text = "Afficher les citations";
             this.IsBusy = false;
         }

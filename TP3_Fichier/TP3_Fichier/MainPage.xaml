@@ -8,10 +8,13 @@
     <StackLayout Padding="20">
         
         <Label Text="Citations" Style="{StaticResource StyleLabel}" FontSize="50" HorizontalTextAlignment="Center"/>
+        
+            
         <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-            <Label x:Name="lblNombreCitations" Text="??? " Style="{StaticResource StyleLabel}"/>
-            <Label Text="citations" Style="{StaticResource StyleLabel}" />
+             <Label x:Name="lblNombreCitations" Text="??? " Style="{StaticResource StyleLabel}"/>
+             <Label Text="citations" Style="{StaticResource StyleLabel}" />
         </StackLayout>
+        <Label x:Name="lblRépertoire" Text="" Style="{StaticResource StyleLabel}" HorizontalOptions="Center"/>
         <StackLayout VerticalOptions="EndAndExpand">
             <Button Clicked="butAfficherCitations_Clicked" x:Name="butAfficherCitations" BackgroundColor="Cornsilk" Text="Chargement des citations en cours..." Margin="20" IsEnabled="False"/>
             <Label Text="Application développée par moi, (c) 2019" Style="{StaticResource StyleLabel}"/>
