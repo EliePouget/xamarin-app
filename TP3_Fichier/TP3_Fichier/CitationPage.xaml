@@ -3,32 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TP3_Fichier.CitationPage"
              Background="linear-gradient(90deg, rgba(7,4,69,1) 17%, rgba(55,118,168,0.6761006289308176) 100%, rgba(3,209,251,0.6713836477987422) 100%);">
-    <Grid>
+    <Grid Padding="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+    
+
+         <Label Text="Edition de la citation" TextColor="#FFFFFF" FontSize="50" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="8" HorizontalTextAlignment="Center"/>
+         <Label Text="Citation :" Style="{StaticResource StyleLabel}" Grid.ColumnSpan="1" Grid.Row="1"/>
+        <Editor x:Name="edText" Margin="20,0,20,20" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7"/>
+
+
+         <Label Text="Auteur :" Style="{StaticResource StyleLabel}" Grid.Column="0" Grid.Row="2"/>
+         <Entry x:Name="entryAuteur" Margin="26,0,20,20" Grid.ColumnSpan="7" Grid.Column="1" Grid.Row="2"/>
+
+
+         <Button x:Name="butSave" Text="Sauvegarder" BackgroundColor="Green" Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="3"/>
+         <Button x:Name="butCancel" Text="Annuler" BackgroundColor="Beige" Grid.ColumnSpan="4" Grid.Column="4" Grid.Row="3" TextColor="Black"/>
+        <Button x:Name="butDelete" Text="Supprimer" BackgroundColor="Red" IsVisible="True" Grid.ColumnSpan="8" Grid.Row="4"/>
+
     </Grid>
-    <ContentPage.Content Padding="10">
-        <StackLayout Padding="20">
-            <Label Text="Edition de la citation" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="50" FontAttributes="Bold"/>
-            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-                <Label Text="Citation :" Style="{StaticResource StyleLabel}"/>
-                <Editor x:Name="edText" Margin="20,0,20,20" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" >
-                <Label Text="Auteur :" Style="{StaticResource StyleLabel}"/>
-                <Entry x:Name="entryAuteur" HorizontalOptions="FillAndExpand" Margin="26,0,20,20"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button x:Name="butSave" Text="Sauvegarder" BackgroundColor="Green" HorizontalOptions="FillAndExpand"/>
-                <Button x:Name="butCancel" Text="Annuler" BackgroundColor="Beige" HorizontalOptions="FillAndExpand"/>
-            </StackLayout>
-            <Button x:Name="butDelete" Text="Supprimer" BackgroundColor="Red" IsVisible="True"/>
-        </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

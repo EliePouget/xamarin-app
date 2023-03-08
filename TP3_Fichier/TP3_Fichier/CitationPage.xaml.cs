@@ -24,7 +24,7 @@ namespace TP3_Fichier
             }
             else
             {
-                butDelete.IsEnabled = false;
+                butDelete.IsVisible = false;
             }
         }
     }
