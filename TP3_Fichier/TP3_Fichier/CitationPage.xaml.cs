@@ -62,5 +62,33 @@ namespace TP3_Fichier
         {
             this.Navigation.PopModalAsync();
         }
+        private bool isModified()
+        {
+            if(citation.Auteur != entryAuteur.Text|| citation.Texte != edText.Text)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+
+                    if (isModified())
+                    {
+                        await DisplayAlert("Non-sauvegarder", "Êtes-vous sûr de vouloir quitter sans sauvegarder la citation", "Oui"
+                        // Confirmation de la sortie de la page
+                        this.Navigation.PopModalAsync();
+                    }
+            }
+            );
+            // Annuler le retour en arrière (sortie de la page)
+            return true; 
+        }
     }
 }
