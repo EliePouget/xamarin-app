@@ -49,5 +49,18 @@ namespace TP3_Fichier
             }
             this.Navigation.PopModalAsync();
         }
+
+        private async void butDel_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Suppression", "Êtes vous sûr de vouloir supprimer cette citation ?", "Oui");
+            citation.Auteur = "";
+            citation.Texte = "";
+            this.Navigation.PopModalAsync();
+        }
+
+        private void butCancel_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PopModalAsync();
+        }
     }
 }

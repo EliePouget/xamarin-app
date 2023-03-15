@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using Xamarin.Essentials;
+using System.Linq;
 
 namespace TP3_Fichier.Data
 {
@@ -31,7 +32,7 @@ namespace TP3_Fichier.Data
                 string content = File.ReadAllText(path, Encoding.UTF8);
                 if (content != null && content != "")
                 {
-                    citations = new ObservableCollection<Citation>(JsonConvert.DeserializeObject<List < Citation >> (content));
+                    citations = new ObservableCollection<Citation>(JsonConvert.DeserializeObject<List<Citation>>(content));
                 }
                 if (citations != null)
                 {
@@ -50,7 +51,7 @@ namespace TP3_Fichier.Data
         public void Save()
         {
             string path = Path.Combine(FileSystem.AppDataDirectory, NOM_DE_SAUVEGARDE);
-            string jsonData = JsonConvert.SerializeObject(citations);
+            string jsonData = JsonConvert.SerializeObject(citations.ToList());
             File.WriteAllText(path, jsonData);
         }
         #region Données internes
