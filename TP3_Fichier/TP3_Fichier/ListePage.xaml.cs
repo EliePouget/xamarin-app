@@ -22,5 +22,10 @@ namespace TP3_Fichier
         {
             this.Navigation.PushModalAsync(new CitationPage((Data.Citation)e.Item));
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushModalAsync(new CitationPage());
+        }
     }
 }

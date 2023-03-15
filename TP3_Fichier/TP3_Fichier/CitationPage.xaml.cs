@@ -55,7 +55,7 @@ namespace TP3_Fichier
             await DisplayAlert("Suppression", "Êtes vous sûr de vouloir supprimer cette citation ?", "Oui");
             citation.Auteur = "";
             citation.Texte = "";
-            this.Navigation.PopModalAsync();
+            await this.Navigation.PopModalAsync();
         }
 
         private void butCancel_Clicked(object sender, EventArgs e)
