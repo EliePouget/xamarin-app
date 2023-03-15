@@ -16,7 +16,7 @@
         </StackLayout>
         <Label x:Name="lblRépertoire" Text="" Style="{StaticResource StyleLabel}" HorizontalOptions="Center"/>
         <StackLayout VerticalOptions="EndAndExpand">
-            <Button Clicked="butAfficherCitations_Clicked" x:Name="butAfficherCitations" BackgroundColor="Cornsilk" Text="Chargement des citations en cours..." Margin="20" IsEnabled="False"/>
+            <Button Clicked="butAfficherCitations_Clicked" x:Name="butAfficherCitations" BackgroundColor="Black" TextColor="Wheat" Text="Chargement des citations en cours..." Margin="20" IsEnabled="False"/>
             <Label Text="Application développée par moi, (c) 2019" Style="{StaticResource StyleLabel}"/>
         </StackLayout>
     </StackLayout>

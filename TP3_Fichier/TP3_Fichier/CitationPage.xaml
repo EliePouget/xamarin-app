@@ -33,7 +33,7 @@
          <Entry x:Name="entryAuteur" Margin="26,0,20,20" Grid.ColumnSpan="7" Grid.Column="1" Grid.Row="2"/>
 
 
-         <Button x:Name="butSave" Text="Sauvegarder" BackgroundColor="Green" Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="3"/>
+         <Button x:Name="butSave" Clicked="butSave_Clicked" Text="Sauvegarder" BackgroundColor="Green" Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="3"/>
          <Button x:Name="butCancel" Text="Annuler" BackgroundColor="Beige" Grid.ColumnSpan="4" Grid.Column="4" Grid.Row="3" TextColor="Black"/>
         <Button x:Name="butDelete" Text="Supprimer" BackgroundColor="Red" IsVisible="True" Grid.ColumnSpan="8" Grid.Row="4"/>
 

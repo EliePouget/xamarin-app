@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using Xamarin.Essentials;
@@ -30,7 +31,7 @@ namespace TP3_Fichier.Data
                 string content = File.ReadAllText(path, Encoding.UTF8);
                 if (content != null && content != "")
                 {
-                    citations = JsonConvert.DeserializeObject<List < Citation >> (content);
+                    citations = new ObservableCollection<Citation>(JsonConvert.DeserializeObject<List < Citation >> (content));
                 }
                 if (citations != null)
                 {
@@ -40,7 +41,7 @@ namespace TP3_Fichier.Data
              }
             if (!exist)
             {
-                citations = new List<Citation>(__data);
+                citations = new ObservableCollection<Citation>( new List<Citation>(__data));
                 System.Diagnostics.Debug.WriteLine("Echec de la récupération des citations");
             }
 

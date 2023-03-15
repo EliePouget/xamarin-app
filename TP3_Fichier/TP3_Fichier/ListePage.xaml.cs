@@ -20,7 +20,7 @@ namespace TP3_Fichier
 
         private void lstCitations_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            this.Navigation.PushAsync(new CitationPage((Data.Citation)e.Item));
+            this.Navigation.PushModalAsync(new CitationPage((Data.Citation)e.Item));
         }
     }
 }

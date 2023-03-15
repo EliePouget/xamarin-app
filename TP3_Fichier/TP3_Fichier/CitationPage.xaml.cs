@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TP3_Fichier.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TP3_Fichier;
 
 namespace TP3_Fichier
 {
@@ -26,6 +27,27 @@ namespace TP3_Fichier
             {
                 butDelete.IsVisible = false;
             }
+        }
+
+        private void butSave_Clicked(object sender, EventArgs e)
+        {
+            if (citation != null)
+            {
+                citation.Auteur = entryAuteur.Text;
+                citation.Texte = edText.Text;
+            }
+            else
+            {
+                var citations = (App.Current as App).GérerCitation.Citations;
+                citations.Add(
+                    new Citation
+                    {
+                        Texte = edText.Text,
+                        Auteur = entryAuteur.Text
+                    }
+                );
+            }
+            this.Navigation.PopModalAsync();
         }
     }
 }
