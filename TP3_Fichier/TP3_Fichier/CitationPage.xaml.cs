@@ -81,9 +81,9 @@ namespace TP3_Fichier
 
                     if (isModified())
                     {
-                        await DisplayAlert("Non-sauvegarder", "Êtes-vous sûr de vouloir quitter sans sauvegarder la citation", "Oui"
-                        // Confirmation de la sortie de la page
-                        this.Navigation.PopModalAsync();
+                    await DisplayAlert("Non-sauvegarder", "Êtes-vous sûr de vouloir quitter sans sauvegarder la citation", "Oui");
+                    // Confirmation de la sortie de la page
+                    await this.Navigation.PopModalAsync();
                     }
             }
             );

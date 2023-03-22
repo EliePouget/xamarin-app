@@ -9,7 +9,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Texte}" 
-                                 Detail="{Binding Auteur}" />
+                                 Detail="{Binding Auteur}">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Ecouter" Clicked="EcouterCitation"></MenuItem>
+                            </TextCell.ContextActions>
+                        </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
